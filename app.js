@@ -10,6 +10,10 @@ changing the question
 changing the option
 count watch
  */
+
+
+ 
+
 // hide the element
 function hide (Id) {
     document.getElementById(Id).style.display = "none";
@@ -20,19 +24,45 @@ function hide (Id) {
 function show (Id) {
     document.getElementById(Id).style.display = "block";
 }
+
+var started = false; // the initial state if false as we are asking user to start the game 
 //defining click event
+//if we click on the start/reset
+document.getElementById("startreset").onclick = function () {
 
-// initial point set
-point = 0;
-document.getElementById("pointCal").innerHTML = point;
-// setting the count down
-timeremaining = 60;
-show("timeremaining");
-document.getElementById("timeremainingvalue").innerHTML = timeremaining; 
+    //if we are playing
 
-//hidding game over box
+    if (started == true) {
 
-hide("gameOver");
+        location.reload(); //reload page
 
-//change button to reset
-document.getElementById("startreset").innerHTML = "Reset Game";
+    } else {//if we are not playing
+
+        //change mode to playing
+
+        started = true;
+
+        //set point to 0
+
+        point = 0;
+        document.getElementById("pointCal").innerHTML = point;
+
+        //show countdown box 
+
+        show("timeremaining");
+        timeremaining = 60;  // initial timing in second
+        document.getElementById("timeremainingvalue").innerHTML = timeremaining;
+
+        //hide game over box
+
+        hide("gameOver");  // state when the game is over
+
+        //change button to reset
+        document.getElementById("startreset").innerHTML = "Reset Game";
+
+        //start countdown
+
+        startCountdown();
+    }
+
+}

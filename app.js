@@ -98,5 +98,8 @@ function stopCountdown () {
     clearInterval(action);
 }
 function QA(){
-    document.getElementById("problem").innerHTML ="hi";
+    var x=1;
+    var y=1;
+
+    document.getElementById("problem").innerHTML =x+"+"+y;
 }

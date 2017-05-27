@@ -118,7 +118,7 @@ color: white;
 
 #gameOver{
     height: 200px;
-    width: 500px;
+    width: 400px;
     background: linear-gradient(#F3CA6B, #F3706C);
     background: -webkit-linear-gradient(#F3CA6B, #F3706C);
     background: -o-linear-gradient(#F3CA6B, #F3706C);

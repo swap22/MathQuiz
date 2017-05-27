@@ -10,8 +10,16 @@ changing the question
 changing the option
 count watch
  */
+// hide the element
+function hide (Id) {
+    document.getElementById(Id).style.display = "none";
+}
 
+//show an element
 
+function show (Id) {
+    document.getElementById(Id).style.display = "block";
+}
 //defining click event
 
 // initial point set

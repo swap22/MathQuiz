@@ -87,4 +87,12 @@ function startCountdown () {
             document.getElementById("startreset").innerHTML = "Start Game";
         }
     }, 1000);// wait for 1000ms
+
+
+    //stop counter
+
+    function stopCountdown () {
+        clearInterval(action);
+    }
+
 }

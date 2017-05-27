@@ -63,6 +63,10 @@ document.getElementById("startreset").onclick = function () {
         //start countdown
 
         startCountdown();
+
+        //generate a new Q&A
+
+        QA();
     }
 
 }
@@ -87,12 +91,12 @@ function startCountdown () {
             document.getElementById("startreset").innerHTML = "Start Game";
         }
     }, 1000);// wait for 1000ms
+}
+//stop counter
 
-
-    //stop counter
-
-    function stopCountdown () {
-        clearInterval(action);
-    }
-
+function stopCountdown () {
+    clearInterval(action);
+}
+function QA(){
+    document.getElementById("problem").innerHTML ="hi";
 }

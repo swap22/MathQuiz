@@ -66,3 +66,25 @@ document.getElementById("startreset").onclick = function () {
     }
 
 }
+
+//start counter
+
+function startCountdown () {
+    action = setInterval(function () {
+        timeremaining -= 1;  //decrementing the time
+        document.getElementById("timeremainingvalue").innerHTML = timeremaining;
+        if (timeremaining == 0) {// game over
+            stopCountdown();
+            show("gameOver");
+
+            //to show the score message
+            document.getElementById("gameOver").innerHTML = "<p>Game over!</p><p>Your point is " + point + ".</p>";
+            
+            //adding hide for other events
+            hide("timeremaining");
+           
+            playing = false;
+            document.getElementById("startreset").innerHTML = "Start Game";
+        }
+    }, 1000);// wait for 1000ms
+}

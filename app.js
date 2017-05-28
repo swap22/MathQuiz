@@ -98,8 +98,8 @@ function stopCountdown () {
     clearInterval(action);
 }
 function QA(){
-    var x=1;
-    var y=1;
+    var x = 1 + Math.ceil(10 * Math.random());
+    var y = 1 + Math.ceil(10 * Math.random());;
 
     document.getElementById("problem").innerHTML =x+"+"+y;
 }

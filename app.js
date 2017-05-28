@@ -3,12 +3,10 @@
 var point;
 var action;
 var timeremaining;
-var correctAnswer;
+var answer;
 
 /*function to write count the point
-changing the question
-changing the option
-count watch
+
  */
 
 
@@ -99,7 +97,25 @@ function stopCountdown () {
 }
 function QA(){
     var x = 1 + Math.ceil(10 * Math.random());
-    var y = 1 + Math.ceil(10 * Math.random());;
+    var y = 1 + Math.ceil(10 * Math.random());
+    answer= x*y;
+    document.getElementById("problem").innerHTML =x+"x"+y;
 
-    document.getElementById("problem").innerHTML =x+"+"+y;
+    var correctPosition = 1 + Math.round(3 * Math.random());
+    document.getElementById("box" + correctPosition).innerHTML = answer; //fill one box with the correct answer
+
+    //fill other boxes with wrong answers
+
+    var answers = [answer];
+
+    for (i = 1; i < 5; i++) {
+        if (i != correctPosition) {
+            var wrongAnswer;
+            do {
+                wrongAnswer = (1 + Math.ceil(10 * Math.random())) * (1 + Math.ceil(10 * Math.random())); //a wrong answer
+            } while (answers.indexOf(wrongAnswer) > -1) // fill other element other 
+            document.getElementById("box" + i).innerHTML = wrongAnswer;
+            answers.push(wrongAnswer); // added element at the end
+        }
+    }
 }
